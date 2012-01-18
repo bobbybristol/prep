@@ -1,3 +1,15 @@
+2.0.8 changes (v2.0.8.1)
+------------------------------
+- updated all UI elements to work with various high-DPI settings (old style and new style, above and below 120dpi)
+- added ability to automatically pause Growl when another application is running fullscreen
+- updated Bonjour TXT data to include GNTP version and websocket supported version
+- better detection of another instance of Growl running in a separate user session
+- fixed errant extra trailing space in GNTP header line of unencrypted responses
+- fix for issue 37 (Could not created registry key for HKEY_USERS32\SID\Software\Classes) - changed installer to install for Everyone instead of Just Me
+- updated growlnotify to return an error code instead of always returning 0
+- added temporary workaround to enable forwarding to Growl on Mac (v1.3.1+) (unencrypted requests)
+
+
 2.0.7.2 changes (v2.0.7.2)
 ------------------------------
 - fixed regression in UDP packet format ('flags' was coming through as 4 bytes instead of 2)
@@ -13,7 +25,6 @@
 - fixed a bug in Growl.Connector.dll that didnt handle newlines (\n) in callback data properly
 - released Notify My Android forwarder plugin
 - released Phony Balloony subscriber plugin (deprecated Phony Balloony stand-alone program)
-
 
 2.0.6 changes (v2.0.6.1)
 ------------------------------
