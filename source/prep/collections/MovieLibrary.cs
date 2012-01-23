@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using prep.utility;
 
@@ -31,18 +32,19 @@ namespace prep.collections
 
     public IEnumerable<Movie> all_movies_published_by_pixar()
     {
-      var matches = new List<Movie>(this.movies).FindAll(m => m.production_studio == ProductionStudio.Pixar);
-
-      return matches;
+      return find_all(m => m.production_studio == ProductionStudio.Pixar);
     }
 
     public IEnumerable<Movie> all_movies_published_by_pixar_or_disney()
     {
-      var matches = new List<Movie>(this.movies).FindAll(
+      return find_all(
         m => m.production_studio == ProductionStudio.Pixar || m.production_studio == ProductionStudio.Disney);
-
-      return matches;
     }
+
+      private IEnumerable<Movie> find_all(Predicate<Movie> predicate )
+      {
+          return new List<Movie>(this.movies).FindAll(predicate);
+      }
 
     public IEnumerable<Movie> all_movies_not_published_by_pixar()
     {
