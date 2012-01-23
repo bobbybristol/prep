@@ -1,4 +1,4 @@
-﻿namespace prep.utility
+﻿namespace prep.utility.filtering
 {
   public static class CriteriaExtensons
   {
@@ -7,5 +7,6 @@
     {
       return new OrMatch<ItemToMatch>(left, right);
     }
+
   }
 }

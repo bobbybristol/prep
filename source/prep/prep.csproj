@@ -69,14 +69,14 @@
     <Compile Include="collections\MovieLibrary.cs" />
     <Compile Include="collections\ProductionStudio.cs" />
     <Compile Include="collections\ReadOnlySetOf.cs" />
-    <Compile Include="collections\Where.cs" />
     <Compile Include="utility\Condition.cs" />
-    <Compile Include="utility\CriteriaExtensons.cs" />
-    <Compile Include="utility\DslExtensions.cs" />
+    <Compile Include="utility\filtering\CriteriaExtensons.cs" />
     <Compile Include="utility\EnumerableExtensions.cs" />
-    <Compile Include="utility\IMatchAn.cs" />
-    <Compile Include="utility\LambdaMatch.cs" />
-    <Compile Include="utility\OrMatch.cs" />
+    <Compile Include="utility\filtering\IMatchAn.cs" />
+    <Compile Include="utility\filtering\LambdaMatch.cs" />
+    <Compile Include="utility\filtering\OrMatch.cs" />
+    <Compile Include="utility\filtering\Where.cs" />
+    <Compile Include="utility\PropertyAccessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
