@@ -117,6 +117,7 @@ namespace prep.specs
       Establish c = () =>
       {
         first_movie = new Movie();
+
         second_movie = new Movie();
         movie_collection.add_all(first_movie, second_movie);
       };
