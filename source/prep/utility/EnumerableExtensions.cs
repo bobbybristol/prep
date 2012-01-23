@@ -8,5 +8,11 @@ namespace prep.utility
     {
       foreach (var item in items) yield return item;
     }
+
+    public static IEnumerable<T> all_items_matching<T>(this IEnumerable<T> items, Condition<T> condition)
+    {
+      foreach (var item in items)
+        if (condition(item)) yield return item;
+    }
   }
 }

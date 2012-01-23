@@ -41,10 +41,10 @@ namespace prep.collections
         m => m.production_studio == ProductionStudio.Pixar || m.production_studio == ProductionStudio.Disney);
     }
 
-      private IEnumerable<Movie> find_all(Predicate<Movie> predicate )
-      {
-          return new List<Movie>(this.movies).FindAll(predicate);
-      }
+    IEnumerable<Movie> find_all(MovieCondition condition)
+    {
+      return movies.all_items_matching(condition);
+    }
 
     public IEnumerable<Movie> all_movies_not_published_by_pixar()
     {
