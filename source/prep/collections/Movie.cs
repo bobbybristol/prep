@@ -35,7 +35,7 @@ namespace prep.collections
 
     public static Condition<Movie> is_published_by_pixar_or_disney()
     {
-      throw new NotImplementedException();
+        return x => x.production_studio == ProductionStudio.Disney || x.production_studio == ProductionStudio.Pixar;
     }
 
     public static Condition<Movie> is_published_by(ProductionStudio studio)
