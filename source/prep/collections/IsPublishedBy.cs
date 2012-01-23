@@ -1,5 +1,4 @@
-﻿using prep.utility;
-using prep.utility.filtering;
+﻿using prep.utility.filtering;
 
 namespace prep.collections
 {
