@@ -6,9 +6,9 @@ namespace prep.collections
 
   public class Where<ItemToMatch>
   {
-    public static void has_a(ProductionStudioAccessor accessor)
+    public static ProductionStudio has_a(ProductionStudioAccessor accessor)
     {
-      throw new NotImplementedException();
+        return accessor();
     }
   }
 }
