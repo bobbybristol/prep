@@ -28,19 +28,20 @@ namespace prep.collections
       return title.GetHashCode();
     }
 
-    public static Condition<Movie> is_in_genre(Genre  genre)
+    public static IMatchAn<Movie> is_in_genre(Genre  genre)
     {
-      return x => x.genre == genre;
+      return new IsInGenre(genre);
     }
 
-    public static Condition<Movie> is_published_by_pixar_or_disney()
+    public static IMatchAn<Movie> is_published_by_pixar_or_disney()
     {
-        return x => x.production_studio == ProductionStudio.Disney || x.production_studio == ProductionStudio.Pixar;
+      return is_published_by(ProductionStudio.Pixar)
+        .or(is_published_by(ProductionStudio.Disney));
     }
 
-    public static Condition<Movie> is_published_by(ProductionStudio studio)
+    public static IMatchAn<Movie> is_published_by(ProductionStudio studio)
     {
-      return x => x.production_studio == studio;
+      return new IsPublishedBy(studio);
     }
   }
 }

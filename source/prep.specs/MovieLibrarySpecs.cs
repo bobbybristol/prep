@@ -198,7 +198,7 @@ namespace prep.specs
 
       It should_be_able_to_find_all_movies_published_by_pixar_or_disney = () =>
       {
-        var results = sut.all_movies_published_by_pixar_or_disney();
+        var results = sut.all_movies().all_items_matching(Movie.is_published_by_pixar_or_disney());
 
         results.ShouldContainOnly(a_bugs_life, pirates_of_the_carribean, cars);
       };
