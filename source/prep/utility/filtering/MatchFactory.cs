@@ -24,7 +24,8 @@ namespace prep.utility.filtering
 
     public IMatchAn<ItemToMatch> not_equal_to(PropertyType value)
     {
-      throw new NotImplementedException();
+        return new LambdaMatch<ItemToMatch>(x => !(x.Equals(value)));
+
     }
   }
 }
