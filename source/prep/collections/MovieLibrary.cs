@@ -42,7 +42,7 @@ namespace prep.collections
 
     IEnumerable<Movie> find_all(Condition<Movie> condition)
     {
-      return movies.all_items_matching(condition);
+      return movies.all_items_matching(new LambdaMatch<Movie>(condition));
     }
 
     public IEnumerable<Movie> all_movies_not_published_by_pixar()
