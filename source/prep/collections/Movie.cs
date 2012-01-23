@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using prep.utility;
 
 namespace prep.collections
 {
@@ -27,37 +27,20 @@ namespace prep.collections
     {
       return title.GetHashCode();
     }
-  }
 
-  public class MovieCompareByTitleAscending : IComparer<Movie>
-  {
-    public int Compare(Movie x, Movie y)
+    public static Condition<Movie> is_in_genre(Genre  genre)
     {
-      return x.title.CompareTo(y.title);
+      return x => x.genre == genre;
     }
-  }
 
-  public class MovieCompareByTitleDescending : IComparer<Movie>
-  {
-    public int Compare(Movie x, Movie y)
+    public static Condition<Movie> is_published_by_pixar_or_disney()
     {
-      return y.title.CompareTo(x.title);
+      throw new NotImplementedException();
     }
-  }
 
-  public class MovieCompareDatePublishedAscending : IComparer<Movie>
-  {
-    public int Compare(Movie x, Movie y)
+    public static Condition<Movie> is_published_by(ProductionStudio studio)
     {
-      return x.date_published.CompareTo(y.date_published);
-    }
-  }
-
-  public class MovieCompareDatePublishedDescending : IComparer<Movie>
-  {
-    public int Compare(Movie x, Movie y)
-    {
-      return y.date_published.CompareTo(x.date_published);
+      return x => x.production_studio == studio;
     }
   }
 }

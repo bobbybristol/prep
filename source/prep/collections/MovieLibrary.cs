@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using prep.utility;
 
@@ -41,7 +40,7 @@ namespace prep.collections
         m => m.production_studio == ProductionStudio.Pixar || m.production_studio == ProductionStudio.Disney);
     }
 
-    IEnumerable<Movie> find_all(MovieCondition condition)
+    IEnumerable<Movie> find_all(Condition<Movie> condition)
     {
       return movies.all_items_matching(condition);
     }
